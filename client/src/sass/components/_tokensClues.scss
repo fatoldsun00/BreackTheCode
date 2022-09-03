@@ -1,0 +1,20 @@
+.tokensClues {
+    display: flex;
+    border-top: 1px solid $coul4;
+    border-bottom: 1px solid $coul4;
+    width: 100%;
+    overflow: hidden;
+    
+    &__player{
+        min-width:100%
+    }
+
+    .tokens{
+        &__token{
+            &--eliminate{
+                color: red
+            }
+        }
+    }
+
+}

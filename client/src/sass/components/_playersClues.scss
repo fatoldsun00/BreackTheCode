@@ -1,0 +1,95 @@
+
+
+
+ .playersClues-Token{
+    width: 10px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 3px;
+    vertical-align:  bottom;
+
+}
+.playersClues-TokenWhite{
+    @extend .playersClues-Token;
+    background-color: grey;
+}
+.playersClues-TokenBlack{
+    @extend .playersClues-Token;
+    background-color: black;
+}
+
+
+.playersClues {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid $coul4;
+    border-bottom: 1px solid $coul4;
+    font-size: 1.5rem;
+    font-family: firacode;
+
+    &__player {
+        border-left: 1px solid $coul4;
+        border-right: 1px solid $coul4;
+        flex: 1 1 auto;
+        text-align: center;
+        align-self: center;
+        padding: 1rem 0;
+        &--leader{
+            color:red;
+        }
+        &--actif{
+            background-color:green;
+        }
+    }
+
+    &__clue{
+        display : flex;
+        justify-content: center;
+    }
+    &__mathFormSum{
+        &--black{
+            @extend .playersClues-TokenBlack;
+        }
+        &--white{
+            @extend .playersClues-TokenWhite;
+        }
+    }
+    &__mathFormSlot{
+        width: 20px;
+        height: 35px;
+        background-color: transparent;
+        display: inline-block;
+        border-radius: 3px;
+        vertical-align:  bottom;
+        border: 1px solid black;
+
+        &--strike{
+            position: relative;
+            &:before{
+                content:' ';
+                border-left:1px solid black;
+                transform: rotate(45deg);
+                height: 20px;
+                width: 1px;
+                position: absolute;
+                left: 48%;
+            }
+        }
+
+        &--black{
+            @extend .playersClues-TokenBlack;
+        }
+        &--white{
+            @extend .playersClues-TokenWhite;
+        }
+    }
+    &__mathFormCount{
+        &--black{
+            @extend .playersClues-TokenBlack;
+        }
+        &--white{
+            @extend .playersClues-TokenWhite;
+        }
+    }
+
+}

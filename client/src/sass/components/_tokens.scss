@@ -1,0 +1,48 @@
+$fontSize: 6em  !default;
+$width:60px;
+$height:110px;
+
+.tokens {
+    font-family: 'Alata', cursive;
+    display: flex;
+    justify-content: space-around;
+
+   &__container{
+     box-shadow: 1px -3px 4px -1px #000;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #47ae21;
+     /*width: $width;
+     height: $height;*/
+     position: relative;
+     
+   }
+   &__token{
+    background-image: url("../assets/bg_tokens.svg");
+    background-size: contain;
+     z-index: 1;
+     //font-size: $fontSize;
+     //margin-left: 6px;
+     padding: 0.5em 0.4em;
+     
+     &::before{
+       content: attr(data-token);
+       text-shadow: #32cd32 6px -3px 9px;
+       color: #32cd32;
+       position: absolute;
+       margin-left: -4px;
+       z-index: -1;
+     }
+     &--black{
+      background: grey;
+     }
+     &--white{
+      background: white;
+    }
+    &--green{
+      background: green;
+    }
+   }
+ }
